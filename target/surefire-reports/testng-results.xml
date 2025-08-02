@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-03T01:00:45 CEST" name="PagoFx Suite" finished-at="2025-08-03T01:00:50 CEST" duration-ms="5836">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestNGCucumberRunner@6a400542]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-08-03T01:00:45 CEST" name="PagoFx Suite" finished-at="2025-08-03T01:00:50 CEST" duration-ms="5836">
+      <class name="Runner.TestNGCucumberRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:Runner.TestNGCucumberRunner@6a400542]" started-at="2025-08-03T01:00:45 CEST" name="setUpClass" finished-at="2025-08-03T01:00:45 CEST" duration-ms="273" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4cfcac13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestNGCucumberRunner@6a400542]" started-at="2025-08-03T01:00:45 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-03T01:00:46 CEST" duration-ms="1192" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching for Toledo gives a AbstractSource from Wikipedia"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["api search of duckduckgo feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestNGCucumberRunner@6a400542]" started-at="2025-08-03T01:00:46 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-03T01:00:47 CEST" duration-ms="758" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify successful search for "Toledo" and valid AbstractUrl"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["api search of duckduckgo feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestNGCucumberRunner@6a400542]" started-at="2025-08-03T01:00:47 CEST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-08-03T01:00:50 CEST" duration-ms="3590" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Search for "Toledo" on DuckDuckGo and verify Wikipedia page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search and navigate to Wikipedia from DuckDuckGo"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestNGCucumberRunner@6a400542]" started-at="2025-08-03T01:00:50 CEST" name="tearDownClass" finished-at="2025-08-03T01:00:50 CEST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestNGCucumberRunner -->
+    </test> <!-- PagoFx Suite -->
+  </suite> <!-- PagoFx Suite -->
+</testng-results>
