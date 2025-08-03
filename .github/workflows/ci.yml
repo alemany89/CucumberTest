@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    runs-on: runnerLuis  # O el nombre de tu etiqueta, si usaste 'runnerLuis', cámbialo por 'self-hosted' o mantén 'runnerLuis'
+    runs-on: runnerLuis
 
     steps:
       - name: Kill orphan Chrome processes
@@ -46,22 +46,9 @@ jobs:
           name: cucumber-basic-report
           path: target/cucumber-reports
 
-      - name: Upload Screenshots
+      - name: Deploy report to GitHub Pages
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: screenshots
-          path: target/*.png
-
-
-      # - name: Upload Surefire Reports
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: surefire-reports
-      #     path: target/surefire-reports
-
-      # - name: Upload Allure Results
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: allure-results
-      #     path: target/allure-results
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target
