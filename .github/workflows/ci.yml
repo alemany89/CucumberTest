@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-basic-report
-          path: target/cucumber-reports
+          path: target/index.html
 
       - name: Deploy report to GitHub Pages
         if: always()
