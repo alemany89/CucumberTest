@@ -8,7 +8,7 @@ jobs:
     runs-on: runnerLuis
 
     container:
-      image: selenium/standalone-chrome:4.34.0-20240626
+      image: selenium/standalone-chrome:latest
       options: --shm-size=2g
 
     steps:
