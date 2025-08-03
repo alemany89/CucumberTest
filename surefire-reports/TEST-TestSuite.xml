@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="5.091" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="4.807" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/surefire/surefirebooter-20250803140348085_3.jar /_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/surefire 2025-08-03T14-03-48_011-jvmRun1 surefire-20250803140348085_1tmp surefire_0-20250803140348085_2tmp"/>
+    <property name="sun.java.command" value="/_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/surefire/surefirebooter-20250803172906531_3.jar /_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/surefire 2025-08-03T17-29-06_464-jvmRun1 surefire-20250803172906531_1tmp surefire_0-20250803172906531_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/test-classes:/_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/classes:/root/.m2/repository/org/seleniumhq/selenium/selenium-java/4.34.0/selenium-java-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-api/4.34.0/selenium-api-4.34.0.jar:/root/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.34.0/selenium-chrome-driver-4.34.0.jar:/root/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.34.0/selenium-chromium-driver-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-json/4.34.0/selenium-json-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.34.0/selenium-manager-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v136/4.34.0/selenium-devtools-v136-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v137/4.34.0/selenium-devtools-v137-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v138/4.34.0/selenium-devtools-v138-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.34.0/selenium-edge-driver-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.34.0/selenium-firefox-driver-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-http/4.34.0/selenium-http-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.34.0/selenium-ie-driver-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.34.0/selenium-remote-driver-4.34.0.jar:/root/.m2/repository/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-api/1.51.0/opentelemetry-api-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-context/1.51.0/opentelemetry-context-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.51.0/opentelemetry-exporter-logging-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.51.0/opentelemetry-sdk-common-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.51.0/opentelemetry-sdk-extension-autoconfigure-spi-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.51.0/opentelemetry-sdk-extension-autoconfigure-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.51.0/opentelemetry-sdk-trace-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.51.0/opentelemetry-sdk-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.51.0/opentelemetry-sdk-metrics-1.51.0.jar:/root/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.51.0/opentelemetry-sdk-logs-1.51.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.17.6/byte-buddy-1.17.6.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-os/4.34.0/selenium-os-4.34.0.jar:/root/.m2/repository/org/apache/commons/commons-exec/1.5.0/commons-exec-1.5.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.34.0/selenium-safari-driver-4.34.0.jar:/root/.m2/repository/org/seleniumhq/selenium/selenium-support/4.34.0/selenium-support-4.34.0.jar:/root/.m2/repository/org/testng/testng/7.4.0/testng-7.4.0.jar:/root/.m2/repository/com/beust/jcommander/1.78/jcommander-1.78.jar:/root/.m2/repository/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:/root/.m2/repository/io/rest-assured/rest-assured/3.3.0/rest-assured-3.3.0.jar:/root/.m2/repository/org/codehaus/groovy/groovy/2.4.15/groovy-2.4.15.jar:/root/.m2/repository/org/codehaus/groovy/groovy-xml/2.4.15/groovy-xml-2.4.15.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/root/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/root/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/root/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/root/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/root/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/root/.m2/repository/io/rest-assured/json-path/3.3.0/json-path-3.3.0.jar:/root/.m2/repository/org/codehaus/groovy/groovy-json/2.4.15/groovy-json-2.4.15.jar:/root/.m2/repository/io/rest-assured/rest-assured-common/3.3.0/rest-assured-common-3.3.0.jar:/root/.m2/repository/io/rest-assured/xml-path/3.3.0/xml-path-3.3.0.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.2.12/jaxb-api-2.2.12.jar:/root/.m2/repository/com/sun/xml/bind/jaxb-osgi/2.2.10/jaxb-osgi-2.2.10.jar:/root/.m2/repository/org/apache/sling/org.apache.sling.javax.activation/0.1.0/org.apache.sling.javax.activation-0.1.0.jar:/root/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar:/root/.m2/repository/io/cucumber/cucumber-java/7.16.1/cucumber-java-7.16.1.jar:/root/.m2/repository/io/cucumber/cucumber-core/7.16.1/cucumber-core-7.16.1.jar:/root/.m2/repository/io/cucumber/cucumber-gherkin/7.16.1/cucumber-gherkin-7.16.1.jar:/root/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.16.1/cucumber-gherkin-messages-7.16.1.jar:/root/.m2/repository/io/cucumber/gherkin/28.0.0/gherkin-28.0.0.jar:/root/.m2/repository/io/cucumber/messages/24.1.0/messages-24.1.0.jar:/root/.m2/repository/io/cucumber/tag-expressions/6.1.0/tag-expressions-6.1.0.jar:/root/.m2/repository/io/cucumber/cucumber-expressions/17.1.0/cucumber-expressions-17.1.0.jar:/root/.m2/repository/io/cucumber/datatable/7.16.1/datatable-7.16.1.jar:/root/.m2/repository/io/cucumber/cucumber-plugin/7.16.1/cucumber-plugin-7.16.1.jar:/root/.m2/repository/io/cucumber/docstring/7.16.1/docstring-7.16.1.jar:/root/.m2/repository/io/cucumber/html-formatter/21.3.0/html-formatter-21.3.0.jar:/root/.m2/repository/io/cucumber/junit-xml-formatter/0.3.0/junit-xml-formatter-0.3.0.jar:/root/.m2/repository/io/cucumber/ci-environment/10.0.1/ci-environment-10.0.1.jar:/root/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/root/.m2/repository/io/cucumber/cucumber-testng/7.16.1/cucumber-testng-7.16.1.jar:/root/.m2/repository/io/cucumber/cucumber-picocontainer/7.16.1/cucumber-picocontainer-7.16.1.jar:/root/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/surefire/surefirebooter-20250803140348085_3.jar"/>
+    <property name="surefire.real.class.path" value="/_work/luis-docker-github-runner/CucumberTest/CucumberTest/target/surefire/surefirebooter-20250803172906531_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.15+6-Ubuntu-0ubuntu120.04"/>
     <property name="user.name" value="root"/>
@@ -53,7 +53,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="runScenario[&quot;Searching for Toledo gives a AbstractSource from Wikipedia&quot;, &quot;api search of duckduckgo feature&quot;](1)" classname="Runner.TestNGCucumberRunner" time="1.332">
+  <testcase name="runScenario[&quot;Searching for Toledo gives a AbstractSource from Wikipedia&quot;, &quot;api search of duckduckgo feature&quot;](1)" classname="Runner.TestNGCucumberRunner" time="1.407">
     <system-out><![CDATA[
 @api
 Scenario: Searching for Toledo gives a AbstractSource from Wikipedia        &amp#27;[90m# src/test/resources/Features/searchApi.feature:4&amp#27;[0m
@@ -73,12 +73,12 @@ Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 202 Accepted
 Server: nginx
-Date: Sun, 03 Aug 2025 14:03:48 GMT
+Date: Sun, 03 Aug 2025 17:29:07 GMT
 Content-Type: application/x-javascript
 Transfer-Encoding: chunked
 Connection: keep-alive
 Access-Control-Allow-Origin: *
-Server-Timing: total;dur=82;desc="Backend Total [n]"
+Server-Timing: total;dur=77;desc="Backend Total [n]"
 X-Robots-Tag: noindex
 Strict-Transport-Security: max-age=31536000
 Permissions-Policy: interest-cohort=()
@@ -94,7 +94,7 @@ Expect-CT: max-age=0
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe response should have the field &amp#27;[0m&amp#27;[32m&amp#27;[1m"AbstractSource"&amp#27;[0m&amp#27;[32m with &amp#27;[0m&amp#27;[32m&amp#27;[1m"Wikipedia"&amp#27;[0m &amp#27;[90m# Steps.ApiSearchStepsDefinition.i_should_verify_that_on_the_response_the_field_is(java.lang.String,java.lang.String)&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Verify successful search for &quot;Toledo&quot; and valid AbstractUrl&quot;, &quot;api search of duckduckgo feature&quot;](2)" classname="Runner.TestNGCucumberRunner" time="0.756">
+  <testcase name="runScenario[&quot;Verify successful search for &quot;Toledo&quot; and valid AbstractUrl&quot;, &quot;api search of duckduckgo feature&quot;](2)" classname="Runner.TestNGCucumberRunner" time="0.799">
     <system-out><![CDATA[
 @api
 Scenario: Verify successful search for "Toledo" and valid AbstractUrl     &amp#27;[90m# src/test/resources/Features/searchApi.feature:10&amp#27;[0m
@@ -114,12 +114,12 @@ Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 202 Accepted
 Server: nginx
-Date: Sun, 03 Aug 2025 14:03:49 GMT
+Date: Sun, 03 Aug 2025 17:29:08 GMT
 Content-Type: application/x-javascript
 Transfer-Encoding: chunked
 Connection: keep-alive
 Access-Control-Allow-Origin: *
-Server-Timing: total;dur=70;desc="Backend Total [n]"
+Server-Timing: total;dur=88;desc="Backend Total [n]"
 X-Robots-Tag: noindex
 Strict-Transport-Security: max-age=31536000
 Permissions-Policy: interest-cohort=()
@@ -154,10 +154,10 @@ accept-ch:
 last-modified: Mon, 28 Jul 2025 14:58:33 GMT
 content-type: text/html; charset=UTF-8
 content-encoding: gzip
-age: 54922
+age: 67240
 accept-ranges: bytes
 vary: Accept-Encoding,X-Subdomain,Cookie,Authorization
-x-cache: cp6012 hit, cp6009 hit/46
+x-cache: cp6012 hit, cp6009 hit/47
 x-cache-status: hit-front
 server-timing: cache;desc="hit-front", host;desc="cp6009"
 strict-transport-security: max-age=106384710; includeSubDomains; preload
@@ -170,7 +170,7 @@ x-client-ip: 81.40.85.127
 cache-control: private, s-maxage=0, max-age=0, must-revalidate, no-transform
 set-cookie: GeoIP=ES:AN:Seville:37.41:-5.99:v4; Path=/; secure; Domain=.wikipedia.org
 set-cookie: NetworkProbeLimit=0.001;Path=/;Secure;SameSite=None;Max-Age=3600
-set-cookie: WMF-Uniq=ksKSxq_hugHJKCUk099EXwJEAAAAAFvdTrwA2YQTQND6Uy-1xpBtLcepDRZtgOrO;Domain=.wikipedia.org;Path=/;HttpOnly;secure;SameSite=None;Expires=Mon, 03 Aug 2026 00:00:00 GMT
+set-cookie: WMF-Uniq=5wU-Qi9L9zDudjDS9YimYQJEAAAAAFvdxqcqSLnb-TqZz14wVLsTvTxA5CBDrGxq;Domain=.wikipedia.org;Path=/;HttpOnly;secure;SameSite=None;Expires=Mon, 03 Aug 2026 00:00:00 GMT
 content-length: 18378
 
 <html class="client-nojs vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 vector-feature-night-mode-enabled skin-theme-clientpref-day vector-sticky-header-enabled vector-toc-available" dir="ltr" lang="en">
@@ -1677,7 +1677,7 @@ additional terms may apply. By using this site, you agree to the             <a 
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mthe response status code should be &amp#27;[0m&amp#27;[32m&amp#27;[1m200&amp#27;[0m                              &amp#27;[90m# Steps.ApiSearchStepsDefinition.the_response_status_code_should_be(int)&amp#27;[0m
 ]]></system-out>
   </testcase>
-  <testcase name="runScenario[&quot;Search for &quot;Toledo&quot; on DuckDuckGo and verify Wikipedia page&quot;, &quot;Search and navigate to Wikipedia from DuckDuckGo&quot;](3)" classname="Runner.TestNGCucumberRunner" time="2.428">
+  <testcase name="runScenario[&quot;Search for &quot;Toledo&quot; on DuckDuckGo and verify Wikipedia page&quot;, &quot;Search and navigate to Wikipedia from DuckDuckGo&quot;](3)" classname="Runner.TestNGCucumberRunner" time="1.981">
     <system-out><![CDATA[
 @ui
 Scenario: Search for "Toledo" on DuckDuckGo and verify Wikipedia page &amp#27;[90m# src/test/resources/Features/searchUI.feature:3&amp#27;[0m
