@@ -6,22 +6,14 @@ Repositorio de pruebas automatizadas con Selenium, Cucumber y TestNG.
 
 Accede al reporte HTML generado automáticamente en cada ejecución:
 
-[Ver reporte más reciente](https://alemany89.github.io/CucumberTest/latest/)
+[Ver reporte más reciente](https://alemany89.github.io/CucumberTest/)
 
-### Historial de reportes
-
-Puedes consultar reportes anteriores desde la [página de históricos](https://alemany89.github.io/CucumberTest/):
-
-- El histórico de reportes se encuentra listado en la página principal.
-- Cada carpeta corresponde a la fecha y hora de ejecución del workflow.
-
----
 
 ## 🚀 ¿Qué contiene este repo?
 
 - Pruebas automatizadas con Selenium + Cucumber + TestNG
 - Workflows de GitHub Actions para ejecutar los tests y publicar el reporte HTML
-- Soporte para históricos de reportes en GitHub Pages
+
 
 ---
 
@@ -30,12 +22,6 @@ Puedes consultar reportes anteriores desde la [página de históricos](https://a
 1. Los tests se ejecutan automáticamente vía GitHub Actions.
 2. Al finalizar, el reporte HTML se publica en la rama `gh-pages` y es accesible mediante GitHub Pages.
 
----
-
-## 📂 Estructura de los reportes
-
-- `/latest/` : Último reporte generado  
-- `/YYYY-MM-DD_HH-MM-SS/` : Histórico de cada ejecución
 
 ---
 
