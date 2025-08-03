@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class UIHooks {
 
@@ -52,12 +53,15 @@ public class UIHooks {
 
     @After("@ui")
     public void tearDown() throws IOException {
-        TakesScreenshot ts = (TakesScreenshot) this.world.driver;
-        File screenshot = ts.getScreenshotAs(OutputType.FILE);
-        Files.copy(screenshot.toPath(), Paths.get("target/error.png"));
         if (this.world.driver != null) {
+            TakesScreenshot ts = (TakesScreenshot) this.world.driver;
+            File screenshot = ts.getScreenshotAs(OutputType.FILE);
+
+            String fileName = "error-" + System.currentTimeMillis() + ".png";
+            Path destination = Paths.get("target", fileName);
+            Files.copy(screenshot.toPath(), destination, StandardCopyOption.REPLACE_EXISTING);
+
             this.world.driver.quit();
         }
-
     }
 }
