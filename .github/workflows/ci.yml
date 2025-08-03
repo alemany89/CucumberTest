@@ -12,6 +12,11 @@ jobs:
       options: --shm-size=2g
 
     steps:
+      - name: Kill orphan Chrome processes
+        run: |
+          pkill chrome || true
+
+
       - name: Install Chrome
         run: |
           apt-get update
@@ -20,6 +25,11 @@ jobs:
           echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
           apt-get update
           apt-get install -y google-chrome-stable
+          
+
+      - name: Check Chrome version
+        run: google-chrome --version
+
 
 
 
