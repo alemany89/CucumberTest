@@ -5,17 +5,12 @@ on:
 
 jobs:
   test:
-    runs-on: runnerLuis
-
-    container:
-      image: maven:3.9.7-eclipse-temurin-17
-      options: --shm-size=2g
+    runs-on: runnerLuis  # O el nombre de tu etiqueta, si usaste 'runnerLuis', cámbialo por 'self-hosted' o mantén 'runnerLuis'
 
     steps:
       - name: Kill orphan Chrome processes
         run: |
           pkill chrome || true
-
 
       - name: Install Chrome
         run: |
@@ -25,18 +20,12 @@ jobs:
           echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
           apt-get update
           apt-get install -y google-chrome-stable
-          
 
       - name: Check Chrome version
         run: google-chrome --version
 
-
-
-
       - name: Checkout repo
         uses: actions/checkout@v4
-
-
 
       - name: Cache Maven dependencies
         uses: actions/cache@v4
@@ -47,7 +36,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      # Maven y Java ya vienen en la imagen de Selenium Standalone
       - name: Run tests with Maven
         run: mvn clean test
 
@@ -58,7 +46,6 @@ jobs:
           name: screenshots
           path: target/*.png
 
-      # (Opcional) Subir reportes
       # - name: Upload Surefire Reports
       #   uses: actions/upload-artifact@v4
       #   with:
