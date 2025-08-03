@@ -1,40 +1,67 @@
-name: Run Tests and Generate Report
+name: Run Selenium+Cucumber+TestNG Tests
 
 on:
   workflow_dispatch:
 
 jobs:
   test:
-    runs-on: runnerLuis
+    runs-on: runnerLuis  # O el nombre de tu etiqueta, si usaste 'runnerLuis', cámbialo por 'self-hosted' o mantén 'runnerLuis'
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Kill orphan Chrome processes
+        run: |
+          pkill chrome || true
 
       - name: Install Chrome
         run: |
           apt-get update
           apt-get install -y wget gnupg2
           wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
           apt-get update
           apt-get install -y google-chrome-stable
 
-      - name: Ensure cucumber-reports directory exists
-        run: mkdir -p target/cucumber-reports
+      - name: Check Chrome version
+        run: google-chrome --version
 
-      - name: Run tests and generate Cucumber report
-        run: mvn clean verify
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Upload Cucumber HTML report
+      - name: Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Run tests with Maven
+        run: mvn clean test
+
+      - name: Upload HTML Cucumber Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cucumber-html-report
+          name: cucumber-basic-report
           path: target/cucumber-reports
 
-      - name: Upload Screenshots (if any)
+      - name: Upload Screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: target/*.png
+
+
+      # - name: Upload Surefire Reports
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: surefire-reports
+      #     path: target/surefire-reports
+
+      # - name: Upload Allure Results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-results
+      #     path: target/allure-results
