@@ -4,12 +4,16 @@ import context.World;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class UIHooks {
 
@@ -47,9 +51,13 @@ public class UIHooks {
     }
 
     @After("@ui")
-    public void tearDown() {
+    public void tearDown() throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) this.world.driver;
+        File screenshot = ts.getScreenshotAs(OutputType.FILE);
+        Files.copy(screenshot.toPath(), Paths.get("target/error.png"));
         if (this.world.driver != null) {
             this.world.driver.quit();
         }
+
     }
 }
