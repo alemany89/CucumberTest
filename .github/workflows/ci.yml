@@ -1,70 +1,38 @@
-name: Run Selenium+Cucumber+TestNG Tests
+name: Run Tests and Generate Report
 
 on:
   workflow_dispatch:
 
 jobs:
   test:
-    runs-on: runnerLuis  # O el nombre de tu etiqueta, si usaste 'runnerLuis', cámbialo por 'self-hosted' o mantén 'runnerLuis'
+    runs-on: self-hosted  # O tu runner personalizado
 
     steps:
-      - name: Kill orphan Chrome processes
-        run: |
-          pkill chrome || true
+      - uses: actions/checkout@v4
 
       - name: Install Chrome
         run: |
           apt-get update
           apt-get install -y wget gnupg2
           wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
           apt-get update
           apt-get install -y google-chrome-stable
 
-      - name: Check Chrome version
-        run: google-chrome --version
-
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Cache Maven dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
-      - name: Run tests with Maven
+      - name: Run tests
         run: mvn clean test
 
-      - name: Generate report
-        run: mvn net.masterthought:maven-cucumber-reporting:5.7.5:generate "-Dcucumber.report.outputDirectory=target/cucumber-reports" "-Dcucumber.report.jsonFiles=[target/cucumber.json]"
+      - name: Debug - list target
+        run: ls -la target
 
+      - name: Check cucumber.json exists
+        run: test -f target/cucumber.json && echo "✅ Found" || (echo "❌ Not found" && exit 1)
+
+      - name: Generate report
+        run: mvn net.masterthought:maven-cucumber-reporting:5.7.5:generate -Dcucumber.report.outputDirectory=target/cucumber-reports -Dcucumber.report.jsonFiles=target/cucumber.json
 
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-html-report
           path: target/cucumber-reports
-
-      - name: Upload Screenshots
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshots
-          path: target/*.png
-
-
-      # - name: Upload Surefire Reports
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: surefire-reports
-      #     path: target/surefire-reports
-
-      # - name: Upload Allure Results
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: allure-results
-      #     path: target/allure-results
