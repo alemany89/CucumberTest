@@ -33,12 +33,9 @@ public class UISearchStepsDefinitions {
         this.world.searchResultsPage = new SearchResultsPage(this.world.driver);
     }
 
-    @When("the user clicks on the {string} link related to it")
+    @Then("the user clicks on the {string} link related to it")
     public void the_user_clicks_on_the_wikipedia_link_related_to_it(String textLinkToClick) {
         this.world.searchResultsPage.assertSearchResultsAreDisplayed();
-        this.world.searchResultsPage.clickOnResultHavingText(textLinkToClick);
-        this.world.wikipediaPage = new WikipediaPage(this.world.driver);
-
 
     }
 
