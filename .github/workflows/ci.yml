@@ -20,6 +20,9 @@ jobs:
           apt-get update
           apt-get install -y google-chrome-stable
 
+      - name: Ensure cucumber-reports directory exists
+        run: mkdir -p target/cucumber-reports
+
       - name: Run tests and generate Cucumber report
         run: mvn clean verify
 
