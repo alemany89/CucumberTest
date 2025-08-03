@@ -8,12 +8,25 @@ jobs:
     runs-on: runnerLuis
 
     container:
-      image: selenium/standalone-chrome:latest
+      image: maven:3.9.7-eclipse-temurin-17
       options: --shm-size=2g
 
     steps:
+      - name: Install Chrome
+        run: |
+          apt-get update
+          apt-get install -y wget gnupg2
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+          apt-get update
+          apt-get install -y google-chrome-stable
+
+
+
       - name: Checkout repo
         uses: actions/checkout@v4
+
+
 
       - name: Cache Maven dependencies
         uses: actions/cache@v4
