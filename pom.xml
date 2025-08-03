@@ -35,7 +35,6 @@
                 <executions>
                     <execution>
                         <id>cucumber-report</id>
-                        <phase>verify</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
