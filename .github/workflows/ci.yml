@@ -5,10 +5,11 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted  # O tu runner personalizado
+    runs-on: runnerLuis
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Install Chrome
         run: |
@@ -19,22 +20,18 @@ jobs:
           apt-get update
           apt-get install -y google-chrome-stable
 
-      - name: Run tests
-        run: mvn clean test
+      - name: Run tests and generate Cucumber report
+        run: mvn clean verify
 
-      - name: Debug - list target
-        run: ls -la target
-
-      - name: Check cucumber.json exists
-        run: test -f target/cucumber.json && echo "✅ Found" || (echo "❌ Not found" && exit 1)
-
-      - name: Generate report
-        run: mvn net.masterthought:maven-cucumber-reporting:5.7.5:generate -Dcucumber.report.outputDirectory=target/cucumber-reports -Dcucumber.report.jsonFiles=target/cucumber.json
-
-
-
-      - name: Upload report
+      - name: Upload Cucumber HTML report
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-html-report
           path: target/cucumber-reports
+
+      - name: Upload Screenshots (if any)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: target/*.png

@@ -35,11 +35,12 @@
                 <executions>
                     <execution>
                         <id>cucumber-report</id>
+                        <phase>verify</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>test</projectName>
+                            <projectName>My Tests</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
                             <jsonFiles>
                                 <param>${project.build.directory}/cucumber.json</param>
