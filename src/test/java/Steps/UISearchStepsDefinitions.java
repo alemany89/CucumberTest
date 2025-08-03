@@ -29,8 +29,6 @@ public class UISearchStepsDefinitions {
         this.world.searchPage.assertSearchWebPageIsDisplayed();
         this.world.searchPage.clickOnSearchBar();
         this.world.searchPage.typeOnSearchBar(termToSearch);
-        this.world.searchPage.clickOnSearchButton();
-        this.world.searchResultsPage = new SearchResultsPage(this.world.driver);
     }
 
     @Then("the user clicks on the {string} link related to it")
