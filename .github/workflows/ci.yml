@@ -5,6 +5,7 @@ on:
 
 jobs:
   test:
+    name: Lanzar pruebas y generar reporte
     runs-on: runnerLuis
     steps:
       - name: Kill orphan Chrome processes
@@ -49,11 +50,12 @@ jobs:
           path: report
 
   deploy:
+    name: Publicar Reporte en GitHub Pages
     needs: test
     runs-on: ubuntu-latest
     permissions:
       pages: write
-      id-token: write   
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
