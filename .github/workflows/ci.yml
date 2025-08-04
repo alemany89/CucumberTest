@@ -1,4 +1,4 @@
-name: Run Selenium+Cucumber+TestNG Tests
+name: Run Selenium+Cucumber+TestNG Tests and Deploy Report
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
 jobs:
   test:
     runs-on: runnerLuis
-
     steps:
       - name: Kill orphan Chrome processes
         run: |
@@ -39,16 +38,27 @@ jobs:
       - name: Run tests with Maven
         run: mvn clean test
 
-      - name: Upload HTML Cucumber Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cucumber-basic-report
-          path: target/index.html
+      - name: Prepare report folder
+        run: |
+          mkdir -p report
+          cp target/index.html report/index.html
 
-      - name: Deploy report to GitHub Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target
+          path: report
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write   
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
