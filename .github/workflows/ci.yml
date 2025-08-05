@@ -6,7 +6,7 @@ on:
 jobs:
   test:
     name: Lanzar pruebas y generar reporte
-    runs-on: runnerLuis
+    runs-on: cucumber
     steps:
       - name: Kill orphan Chrome processes
         run: |
